@@ -1,0 +1,14 @@
+@use "./variables" as *;
+@mixin primary-button {
+  font-size: 1rem;
+  font-weight: 700;
+  color: $color-button;
+  text-transform: uppercase;
+  border: 1px solid $color-button;
+  background-color: transparent;
+  padding: 1.8rem 6.6rem;
+  cursor: pointer;
+  display: block;
+  box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+  transition: all 1s;
+}

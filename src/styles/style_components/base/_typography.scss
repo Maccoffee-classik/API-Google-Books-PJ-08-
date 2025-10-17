@@ -1,0 +1,15 @@
+@use "../abstracts/variables" as *;
+html {
+  font-size: 62.5%; /*now 1rem is 10px = 10 divided by 16 (default font size)*/
+  box-sizing: border-box;
+  overflow-x: hidden;
+  font-family: "Montserrat", sans-serif;
+}
+
+body {
+  font-family: $font-main;
+  background-color: $color-bg;
+  color: $color-dark;
+  margin: 0;
+  padding: 0 16rem;
+}

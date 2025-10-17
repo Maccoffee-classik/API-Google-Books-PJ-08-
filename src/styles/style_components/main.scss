@@ -1,0 +1,18 @@
+// === SCSS Module for Bookshop Layout ===
+
+// ==== Abstracts (variables, mixins, fonts) ====
+@use "abstracts/variables" as *;
+@use "abstracts/mixins" as *;
+
+// ==== Base ====
+
+@use "base/typography";
+
+// ==== Components ====
+@use "components/header";
+@use "components/slider";
+
+@use "components/books";
+
+// ==== Responsive ====
+@use "responsive/queries";

@@ -1,0 +1,195 @@
+@use "../abstracts/variables" as *;
+@use "../abstracts/mixins" as *;
+
+//BOOK CATEGORIES
+.categories {
+  position: absolute;
+  left: -25%;
+  padding: 4.5rem 15rem;
+
+  background-color: rgba(239, 238, 246, 1);
+
+  &__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2.3rem;
+  }
+
+  &__item {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: rgba(92, 106, 121, 1);
+    cursor: pointer;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &__item--active {
+    list-style: disc;
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-dark;
+  }
+}
+
+//BOOKS
+.books {
+  margin-top: 10rem;
+  position: relative;
+  padding: 2rem;
+  padding-left: 10rem;
+  font-family: $font-main;
+
+  &__grid {
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(2, minmax(330px, 1fr));
+    column-gap: 7rem;
+    row-gap: 9rem;
+    justify-content: center;
+  }
+
+  &__card {
+    z-index: 100;
+    display: flex;
+
+    border-radius: 8px;
+    overflow: visible;
+
+    gap: 2.2rem;
+    max-width: 430px;
+    min-width: 430px;
+    max-height: 300px;
+
+    &-image {
+      max-width: 20rem;
+      height: 35rem;
+      border-radius: 4px;
+      object-fit: cover;
+      flex-shrink: 0;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.4);
+    }
+
+    &-details {
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+      align-self: center;
+      height: 23rem;
+    }
+
+    &-author {
+      font-size: 1.2rem;
+      color: $color-muted;
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0.3rem;
+    }
+
+    &-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin: 0 0 0.4rem;
+    }
+
+    &-rating {
+      display: flex;
+      align-items: end;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+
+      span {
+        color: $color-star;
+        font-size: 1.6rem;
+      }
+
+      &-reviews {
+        margin: 0;
+        font-size: 1.4rem;
+        color: $color-muted;
+      }
+    }
+
+    &-description {
+      font-size: 1.2rem;
+      line-height: 1.4;
+      margin-bottom: 0.8rem;
+      color: $color-dark;
+      max-width: 230px;
+    }
+
+    &-price {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 0.6rem;
+      color: $color-dark;
+    }
+
+    &-buy-btn-disabled {
+      background-color: $color-muted;
+      color: $color-muted;
+    }
+
+    &-buy-btn {
+      @include primary-button;
+      margin-top: 1rem;
+      align-self: flex-start;
+      width: 100%;
+
+      &:hover {
+        background-color: $color-button;
+        color: $color-light;
+        box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+      }
+    }
+  }
+
+  &__load {
+    @include primary-button;
+    margin: 10rem auto 0;
+    width: 20.8rem;
+
+    &:hover {
+      background-color: $color-button;
+      color: $color-light;
+      box-shadow: 0 8px 10px rgba(0, 0, 0, 0.2);
+    }
+  }
+}
+
+//LOADER & ERROR
+.loader {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #3498db;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin: 2rem auto;
+  display: block;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.error {
+  color: red;
+  text-align: center;
+  font-size: 1.2rem;
+  margin-top: 2rem;
+}

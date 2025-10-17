@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bookshop</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="header__container">
+        <div class="header__logo">Bookshop</div>
+        <nav class="header__nav" aria-label="Main navigation">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="active-link" href="#books">Books</a>
+            </li>
+            <li class="header__nav-item"><a href="#">Audiobooks</a></li>
+            <li class="header__nav-item"><a href="#">Stationery & Gifts</a></li>
+            <li class="header__nav-item"><a href="#">Blog</a></li>
+          </ul>
+        </nav>
+        <div class="header__icons">
+          <img src="img/user.svg" aria-label="Profile" alt="Profile" />
+          <img src="img/search.svg" aria-label="Search" alt="Search" />
+          <img src="img/shopBag.svg" aria-label="Basket" alt="Basket" />
+          <span class="header__icons-basket-amount"></span>
+        </div>
+      </div>
+    </header>
+
+    <div class="slider" id="slider">
+      <div class="slider__img-container">
+        <img src="img/banner1.jpg" alt="Slider image" class="slider__img" />
+        <img src="img/banner2.webp" alt="Slider image" class="slider__img" />
+        <img src="img/banner3.jpg" alt="Slider image" class="slider__img" />
+      </div>
+
+      <div aria-hidden="true" class="slider__pagination">
+        <ul class="slider__pagination-items">
+          <li
+            class="slider__pagination-item slider__pagination-item--active"
+          ></li>
+          <li class="slider__pagination-item"></li>
+          <li class="slider__pagination-item"></li>
+        </ul>
+      </div>
+      <a href="#" alt="Change old book on new" class="slider__promo--1">
+        <p>
+          Change old book on new
+          <span><img src="img/arrow-icon.svg" alt="" /></span>
+        </p>
+      </a>
+      <a href="#" alt="top 100 books 2022" class="slider__promo--2">
+        <p>
+          top 100 books 2022
+          <span><img src="img/arrow-icon.svg" alt="" /></span>
+        </p>
+      </a>
+    </div>
+
+    <main class="main">
+      <section id="books" class="books" aria-label="Book catalogue">
+        <aside class="categories">
+          <ul class="categories__list">
+            <li class="categories__item categories__item--active">
+              Architecture
+            </li>
+            <li class="categories__item">Art & Fashion</li>
+            <li class="categories__item">Biography</li>
+            <li class="categories__item">Business</li>
+            <li class="categories__item">Crafts & Hobbies</li>
+            <li class="categories__item">Drama</li>
+            <li class="categories__item">Fiction</li>
+            <li class="categories__item">Food & Drink</li>
+            <li class="categories__item">Health & Wellbeing</li>
+            <li class="categories__item">History & Politics</li>
+            <li class="categories__item">Humor</li>
+            <li class="categories__item">Poetry</li>
+            <li class="categories__item">Psychology</li>
+            <li class="categories__item">Science</li>
+            <li class="categories__item">Technology</li>
+            <li class="categories__item">Travel & Maps</li>
+          </ul>
+        </aside>
+        <!-- Spinner Loader -->
+        <div id="loader" class="loader hidden"></div>
+
+        <!-- Error Message -->
+        <div id="error" class="error hidden">
+          ❌ Failed to load books. Please try again.
+        </div>
+        <div class="books__grid"></div>
+
+        <button class="books__load" aria-label="Load more books">
+          Load More
+        </button>
+      </section>
+    </main>
+  </body>
+</html>
